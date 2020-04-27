@@ -47,6 +47,9 @@
 				
 				<!-- 配饰工具 -->
 				<Accessories></Accessories>
+				
+				<!-- 底部 -->
+				<Bottom></Bottom>
 		  		
 	  </div>
 	 
@@ -66,6 +69,7 @@ import Hair from '@/components/Hair.vue'
 import Bath from '@/components/Bath.vue'
 import Man from '@/components/Man.vue'
 import Accessories from '@/components/Accessories.vue'
+import Bottom from '@/components/Bottom.vue'
 
 import Vue from 'vue';
 import { Lazyload } from 'vant';
@@ -82,7 +86,8 @@ export default {
 	Hair,
 	Bath,
 	Man,
-	Accessories
+	Accessories,
+	Bottom
   },
   data(){
 	  return{
@@ -92,7 +97,7 @@ export default {
   },
   created(){
 	  this.images=Banner.data
-	  console.log(Banner.data)
+	  // console.log(Banner.data)
   },
 }
 </script>
@@ -100,7 +105,7 @@ export default {
 <style lang="less" scoped="scoped">
 	.home{
 		.body{
-			margin-bottom: 50px;
+			margin-bottom:50px;
 			.top{
 				display: flex;
 				justify-content: space-between;

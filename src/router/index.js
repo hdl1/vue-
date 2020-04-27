@@ -5,33 +5,74 @@ import Sort from '../views/Sort.vue'
 import Brand from '../views/Brand.vue'
 import Cart from '../views/Cart.vue'
 import Mine from '../views/Mine.vue'
+import Product from '../views/Product.vue'
+import Category from '../views/Category.vue'
+import Login from '../views/Login.vue'
 Vue.use(VueRouter)
 
   const routes = [
   {
     path: '/home',
     name: 'Home',
-    component: Home
+    component: Home,
+	meta:{
+		tab:true
+	}
   },
   {
     path: '/sort',
     name: 'Sort',
-    component: Sort
+    component: Sort,
+	meta:{
+		tab:true
+	}
   },
   {
     path: '/brand',
     name: 'Brand',
-    component: Brand
+    component: Brand,
+	meta:{
+		tab:true
+	}
   },
   {
     path: '/cart',
     name: 'Cart',
-    component: Cart
+    component: Cart,
+	meta:{
+		tab:true
+	}
   },
+  
+  {
+    path: '/product/:id',
+    name: 'Product',
+    component: Product
+	
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  	
+  },
+  {
+    path: '/category',
+    name: 'Category',
+    component: Category,
+	meta:{
+		tab:true
+	}
+  },
+  
   {
     path: '/mine',
     name: 'Mine',
-    component: Mine
+    component: Mine,
+	redirect:'/login',
+	meta:{
+		tab:true
+	}
   },
   // {
   //   path: '/about',
@@ -45,6 +86,13 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes,
+  scrollBehavior:function(){
+  	  return {
+  		  x:0,
+  		  y:0
+  	  }
+  },
+  
 })
 
 export default router

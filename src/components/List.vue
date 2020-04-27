@@ -2,9 +2,11 @@
   <div class="list">
 		<ul>
 			<li v-for="(item,index) in datas" :key="index">
-				
-					<img :src="item.img" alt="">
-					<span>{{item.name}}</span>
+					<router-link to="/category" class="a">
+						<img :src="item.img" alt="">
+						<span>{{item.name}}</span>
+					</router-link>
+					
 				
 				
 			</li>
@@ -47,6 +49,14 @@ export default {
 <style scoped lang="less">
 	.list{
 		background-color: #FFFFFF;
+		.a{
+			display: block;
+			text-align: center;
+			display: flex;
+			justify-content: center;
+			flex-flow: column;
+			align-items: center;
+		}
 		ul{
 			
 			display: flex;
@@ -55,11 +65,7 @@ export default {
 				width: 20%;
 				height:0.899rem;
 				margin: 0.4rem 0;
-				text-align: center;
-				display: flex;
-				justify-content: center;
-				flex-flow: column;
-				align-items: center;
+				
 			
 				img{
 					width:0.7871rem;

@@ -10,17 +10,23 @@
 	  <div class="body" >
 		  <div class="con" v-for="(item,index) in datas">
 			  <div class="left">
+				  <router-link :to="'/product/'+item.product_id" class="a">
 					<img :src="item.image_url" alt="">
+				  </router-link>
 			  </div>
 			  <div class="right">
-				  <h3>{{item.name}}</h3>
+				   <router-link :to="'/product/'+item.product_id" class="a">
+						<h3>{{item.name}}</h3>
+					</router-link>
 				  <div class="tex">
-					  <div class="t_left">
+					  <router-link :to="'/product/'+item.product_id" class="a">
+						<div class="t_left">
 						  <span class="price">{{item.final_price}}{{item.merchant_currency}}</span><span>{{item.price}}{{item.merchant_currency}}</span>
 						   <p>参考价:￥{{item.reference_price}}</p>
-					  </div>
+						</div>
+					</router-link>
 					  <div class="t_right">
-						  <van-button color="#333333" size="normal" class="btn" >加入购物篮</van-button>
+						  <van-button color="#333333" size="normal" class="btn" :to="'/cart/'+item.product_id">加入购物篮</van-button>
 					  </div>
 					 
 					   
@@ -76,9 +82,12 @@ export default {
 			.con{
 				display: flex;
 				justify-content: center;
+				.a{
+					display: block;
+				}
 				.left{
 					width: 45%;
-					
+					padding-left: 0.19rem;
 					img{
 						width: 100%;
 					}
@@ -129,7 +138,7 @@ export default {
 								line-height: .54rem;
 								background-color: #333;
 								color: #fff;
-								font-size: .24rem;
+								font-size: .18rem;
 								text-align: center;
 								border-radius: .02rem;
 								margin:0.3rem  0.2rem 0.2rem 0;

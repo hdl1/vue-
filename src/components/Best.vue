@@ -9,18 +9,20 @@
 	
 	  <div class="body">
 		  <div class="con" v-for="(item,index) in datas">
-			  <img :src="item.image_url" alt="">
-			  <h3>{{item.name}}</h3>
-			 <span class="price">{{item.final_price}}{{item.merchant_currency}}</span><span>{{item.price}}{{item.merchant_currency}}</span>
-			  <p>参考价:￥{{item.reference_price}}</p>
-			  <van-button color="#333333" size="large" class="btn" >加入购物篮</van-button>
+			  <router-link :to="'/product/'+item.product_id " class="b"> 
+				  <img :src="item.image_url" alt="">
+				   <h3>{{item.name}}</h3>
+				  <span class="price">{{item.final_price}}{{item.merchant_currency}}</span><span>{{item.price}}{{item.merchant_currency}}</span>
+				   <p>参考价:￥{{item.reference_price}}</p>
+			  </router-link>
+			  <van-button color="#333333" size="large" class="btn" :to="'/cart/'+item.product_id">加入购物篮</van-button>
 		  </div>
 		  <div class="bottom">
 			  <router-link to="/category" class="a">
 				   查看更多>
 			  </router-link>
-			 
 		  </div>
+		  
 	  </div>
 		
   </div>
@@ -65,46 +67,52 @@ export default {
 			margin-top: 0.4rem;
 			
 			.con{
+				
 				width: 50%;
 				padding: 0 0.28rem;
 				margin-top: 0.4rem;
-				.price{
-					font-size: 0.3rem;
-					color:#eb0065;
-				}
-				span{
-					font-size: .24rem;
-					color: #999;
-					margin-left:0.2rem;
+				.b{
+					display: block;
+					.price{
+						font-size: 0.3rem;
+						color:#eb0065;
+					}
+					span{
+						font-size: .24rem;
+						color: #999;
+						margin-left:0.2rem;
+						
+						
+						
+					}
+					span:nth-of-type(2){
+						text-decoration:line-through
+					}
+					p{
+						font-size: .24rem;
+						color: #999;
+						margin: .08rem 0 0.2rem 0;
+					}
+					h3{
+						font-size: 0.268rem;
+						color:#333333;
+						white-space: nowrap;
+						overflow: hidden;
+						text-overflow:ellipsis;
+						margin-bottom: 0.3rem;
+						
+						
+					}
+					img{
+						width: 100%;
 					
-					
-					
 				}
-				span:nth-of-type(2){
-					text-decoration:line-through
-				}
-				p{
-					font-size: .24rem;
-					color: #999;
-					margin: .08rem 0 0.2rem 0;
-				}
-				h3{
-					font-size: 0.268rem;
-					color:#333333;
-					white-space: nowrap;
-					overflow: hidden;
-					text-overflow:ellipsis;
-					margin-bottom: 0.3rem;
-					
-					
-				}
-				img{
-					width: 100%;
 				}
 				.btn{
 					height: 0.68rem;
 					font-size:0.28rem ;
 					color:#FFFFFF;
+					line-height: 0.68rem;
 					
 				}
 				

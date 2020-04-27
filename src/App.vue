@@ -2,7 +2,7 @@
   <div id="app">
     <router-view/>
 	<!-- 底部导航 -->
-	<van-tabbar v-model="active">
+	<van-tabbar v-model="active" v-show="$route.meta.tab">
 	  <van-tabbar-item :icon="icon.homeActive" to="/home">首页</van-tabbar-item>
 	  <van-tabbar-item :icon="icon.sortActive" to="sort">分类</van-tabbar-item>
 	  <van-tabbar-item :icon="icon.brandActive" to="brand">品牌</van-tabbar-item>

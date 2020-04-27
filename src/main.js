@@ -11,6 +11,9 @@ Vue.config.productionTip = false
 import Vant from 'vant';
 import 'vant/lib/index.css';
 Vue.use(Vant);
+//api
+import * as api from './api';
+Vue.prototype.$api=api;
 
 new Vue({
   router,
