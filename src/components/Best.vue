@@ -15,7 +15,7 @@
 				  <span class="price">{{item.final_price}}{{item.merchant_currency}}</span><span>{{item.price}}{{item.merchant_currency}}</span>
 				   <p>参考价:￥{{item.reference_price}}</p>
 			  </router-link>
-			  <van-button color="#333333" size="large" class="btn" :to="'/cart/'+item.product_id">加入购物篮</van-button>
+			  <van-button color="#333333" size="large" class="btn" @click="addcart(item)">加入购物篮</van-button>
 		  </div>
 		  <div class="bottom">
 			  <router-link to="/category" class="a">
@@ -39,6 +39,20 @@ export default {
   created(){
 	  this.datas=Datas.results
 	  // console.log(Datas.results);
+  },
+  methods:{
+	  addcart(it){
+		  this.$store.dispatch("addAsync",{
+		      goodid:it.product_id,
+		      name:it.name,
+		      price:it.reference_price,
+		      desc:it.short_description,
+		      num:1,
+		      image:it.image_url,
+		  }).then(()=>{
+		  	this.$toast("加入购物车成功")
+		  })
+	  }
   }
 }
 </script>

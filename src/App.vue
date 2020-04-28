@@ -3,7 +3,7 @@
     <router-view/>
 	<!-- 底部导航 -->
 	<van-tabbar v-model="active" v-show="$route.meta.tab">
-	  <van-tabbar-item :icon="icon.homeActive" to="/home">首页</van-tabbar-item>
+	  <van-tabbar-item :icon="icon.homeActive" to="/">首页</van-tabbar-item>
 	  <van-tabbar-item :icon="icon.sortActive" to="sort">分类</van-tabbar-item>
 	  <van-tabbar-item :icon="icon.brandActive" to="brand">品牌</van-tabbar-item>
 	  <van-tabbar-item :icon="icon.cartActive" to="cart">购物篮</van-tabbar-item>

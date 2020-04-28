@@ -26,7 +26,7 @@
 							 </router-link>
 					  	</div>
 					  <div class="t_right">
-						  <van-button color="#333333" size="normal" class="btn"  to="/cart">加入购物篮</van-button>
+						  <van-button color="#333333" size="normal" class="btn"  @click="addcart(item)">加入购物篮</van-button>
 					  </div>
 				  </div>
 				 
@@ -55,7 +55,34 @@ export default {
   created(){
 	  this.datas=Face.results
 	  // console.log(Face.results);
-  }
+  },
+  methods:{
+  
+  	  addcart(it){
+  
+  	  		  this.$store.dispatch("addAsync",{
+  
+  	  		      goodid:it.product_id,
+  
+  	  		      name:it.name,
+  
+  	  		      price:it.reference_price,
+  
+  	  		      desc:it.short_description,
+  
+  	  		      num:1,
+  
+  	  		      image:it.image_url,
+  
+  	  		  }).then(()=>{
+  
+  	  		  	this.$toast("加入购物车成功")
+  
+  	  		  })
+  
+  	  }
+  
+    },
 }
 </script>
 

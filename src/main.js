@@ -14,7 +14,9 @@ Vue.use(Vant);
 //api
 import * as api from './api';
 Vue.prototype.$api=api;
-
+//js-cookie
+import jscookie from 'js-cookie';
+Vue.prototype.$cookie=jscookie;
 new Vue({
   router,
   store,

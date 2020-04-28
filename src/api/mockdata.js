@@ -13,4 +13,13 @@ mock.mock("https:www.hhh.php",function(){
 	console.log(res)
 	
 })
+
+mock.mock("http://520mg.com/mi/send.php",function(){
+	let result={
+		"code":0,
+		"token":"dhsjhfjfj;dfjfhjhg;dsffcdf;",
+		"return":"ok",
+	}
+	return result
+})
 export {mock}

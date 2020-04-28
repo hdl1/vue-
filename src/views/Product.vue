@@ -2,12 +2,12 @@
 	<div class="product">
 		<div class="top">
 			<div class="left">
-				<router-link to="/home">
+				<router-link to="/">
 					<img src="../assets/img/xy.png" alt="">
 				</router-link>
 				</div>
 			<div class="right">
-				<router-link to="/home">
+				<router-link to="/">
 					<img src="../assets/img/home2.png" alt="">
 				</router-link>
 				
@@ -67,9 +67,9 @@
 		
 		<van-goods-action>
 		  <van-goods-action-icon icon="chat-o" text="客服" dot />
-		  <van-goods-action-icon icon="cart-o" text="购物车" badge="5" />
+		  <van-goods-action-icon icon="cart-o" text="购物车" @click="carts" />
 		  <van-goods-action-icon icon="shop-o" text="店铺" badge="12" />
-		  <van-goods-action-button type="warning" text="加入购物车" />
+		  <van-goods-action-button type="warning" text="加入购物车" @click="addcart" />
 		  
 		</van-goods-action>
 			
@@ -82,7 +82,12 @@
 	import { CountDown } from 'vant';
 	Vue.use(CountDown);
 	import {total} from '../data';
+	
 	export default{
+		components: {
+			
+		},
+		
 		data(){
 			return{
 				datasInfo:[],
@@ -103,8 +108,26 @@
 					
 				})
 			})
+			// console.log(this.datasInfo)
 			
 		},
+		methods:{
+			addcart(){
+				this.$store.dispatch("addAsync",{
+				    goodid:this.datasInfo.product_id,
+				    name:this.datasInfo.name,
+				    price:this.datasInfo.reference_price,
+				    desc:this.datasInfo.short_description,
+				    num:this.value,
+				    image:this.datasInfo.image_url,
+				}).then(()=>{
+					this.$toast("加入购物车成功")
+				})
+			},
+			carts(){
+				this.$router.push("/cart")
+			}
+		}
 		
 	}
 </script>

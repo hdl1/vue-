@@ -8,11 +8,15 @@ import Mine from '../views/Mine.vue'
 import Product from '../views/Product.vue'
 import Category from '../views/Category.vue'
 import Login from '../views/Login.vue'
+import Forget from '../views/Forget.vue'
+import Res from '../views/Res.vue'
+
+
 Vue.use(VueRouter)
 
   const routes = [
   {
-    path: '/home',
+    path: '/',
     name: 'Home',
     component: Home,
 	meta:{
@@ -27,6 +31,13 @@ Vue.use(VueRouter)
 		tab:true
 	}
   },
+  {
+    path: '/forget',
+    name: 'Forget',
+    component: Forget,
+  
+  },
+  
   {
     path: '/brand',
     name: 'Brand',
@@ -57,6 +68,12 @@ Vue.use(VueRouter)
   	
   },
   {
+    path: '/res',
+    name: 'Res',
+    component: Res
+  	
+  },
+  {
     path: '/category',
     name: 'Category',
     component: Category,
@@ -69,9 +86,10 @@ Vue.use(VueRouter)
     path: '/mine',
     name: 'Mine',
     component: Mine,
-	redirect:'/login',
+	
 	meta:{
-		tab:true
+		tab:true,
+		auth:true
 	}
   },
   // {
@@ -96,3 +114,25 @@ const router = new VueRouter({
 })
 
 export default router
+import JsCookie from 'js-cookie'
+
+router.beforeEach( (t,f,n)=>{
+ 	if(t.meta.auth){
+ 		let logined = JsCookie.get("username");
+ 		if(!logined){
+ 			n("/login?next="+t.path)
+ 			
+ 			
+ 		}
+ 		else{
+ 		
+ 			n();
+ 		}
+ 		
+ 	}
+ 	else{
+ 	
+ 		n();
+ 	}
+ 	
+ } )
