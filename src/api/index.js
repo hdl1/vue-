@@ -1,6 +1,6 @@
 import  axios from 'axios'
 import './mockdata.js'
-axios.defaults.baseURL = 'http://520mg.com';
+
 
 let DatailAPI= data=>{
 	return axios.get("https:www.hhh.php",{params:{
@@ -10,12 +10,12 @@ let DatailAPI= data=>{
 
 // 短信接口
 let sendAPI=data=>{
-	return axios.post("/mi/send.php",data)
+	return axios.post("www.hdl/send.php",data)
 }
 
 //登录
 let loginAPI=data=>{
-	return axios.post("/member/ajax_login.php",data)
+	return axios.post("https:www.hdl.php",data)
 }
 
 

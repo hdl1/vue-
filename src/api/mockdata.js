@@ -14,10 +14,19 @@ mock.mock("https:www.hhh.php",function(){
 	
 })
 
-mock.mock("http://520mg.com/mi/send.php",function(){
+mock.mock("www.hdl/send.php",function(){
 	let result={
 		"code":0,
 		"token":"dhsjhfjfj;dfjfhjhg;dsffcdf;",
+		"return":"ok",
+	}
+	return result
+})
+mock.mock("https:www.hdl.php",function(){
+	let result={
+		"code":0,
+		"userid":"userid",
+		"userpwd":"userpwd",
 		"return":"ok",
 	}
 	return result

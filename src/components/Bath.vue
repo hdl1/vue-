@@ -152,7 +152,7 @@ export default {
 								line-height: .54rem;
 								background-color: #333;
 								color: #fff;
-								font-size: .24rem;
+								font-size: .16rem;
 								text-align: center;
 								border-radius: .02rem;
 								margin:0.3rem  0.2rem 0.2rem 0;

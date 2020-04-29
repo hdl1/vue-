@@ -15,12 +15,12 @@
 				<input type="text" placeholder="请输入手机号" v-model.trim="tel">
 			</div>
 			<div class="pwd">
-				<i></i>
+				<i style="background-position:-1.26rem 0"></i>
 				<input type="text" placeholder="请输入验证码" v-model.trim="yzm">
-				<van-button color="#000000" :style="{borderRadius: .34+'rem',height: .68+'rem',fontSize:0.12+'rem',lineHeight:0.68+'rem'}" @click="getyzm">获取验证码</van-button>
+				<van-button color="#000000" :style="{borderRadius: .34+'rem',width:2.2+'rem',height: .68+'rem',fontSize:0.12+'rem',lineHeight:0.68+'rem'}" @click="getyzm">获取验证码</van-button>
 			</div>
 			<div class="pwd">
-				<i style="background-position: 0 -1.26rem"></i>
+				<i style="background-position:0 -1.26rem"></i>
 				<input type="password" placeholder="请输入密码" v-model.trim=" pwd">
 			</div>
 			<div class="mj" >
@@ -155,7 +155,6 @@
 					width: .42rem;
 					height: .42rem;
 					background-image: url(../assets/img/icon.png);
-					background-position: -1.26rem 0;
 					background-size: 1.68rem 1.68rem;
 					margin-right: 0.3rem;
 				}
