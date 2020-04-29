@@ -2,9 +2,7 @@
 	<div class="product">
 		<div class="top">
 			<div class="left">
-				<router-link to="/">
-					<img src="../assets/img/xy.png" alt="">
-				</router-link>
+					<img src="../assets/img/xy.png" alt="" @click="back">
 				</div>
 			<div class="right">
 				<router-link to="/">
@@ -46,7 +44,7 @@
 				<div class="active">
 					<van-divider />
 					<span>促销:</span>
-					<span>{{datasInfo.sales_tags[1]}}</span>
+					<span v-show="datasInfo.sales_tags[1]">{{datasInfo.sales_tags[1]}}</span>
 					<span>{{active}}</span>
 					<br>
 					<van-divider />
@@ -108,10 +106,13 @@
 					
 				})
 			})
-			// console.log(this.datasInfo)
+			console.log(this.datasInfo)
 			
 		},
 		methods:{
+			back(){
+				this.$router.go(-1);
+			},
 			addcart(){
 				this.$store.dispatch("addAsync",{
 				    goodid:this.datasInfo.product_id,
@@ -144,6 +145,13 @@
 			height: 0.86rem;
 			padding: 0 0.28rem;
 			border-bottom: 1px solid #999999;
+			.left{
+				width: 0.32rem;
+				height: 0.32rem;
+				img{
+					width: 100%;
+				}
+			}
 			
 		}
 		.body{

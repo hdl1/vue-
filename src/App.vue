@@ -18,7 +18,7 @@
 	    return {
 	      active: 0,
 	           icon: {
-	             homeActive: require('./assets/img/home.png'),
+	             homeActive: require('./assets/img/home3.png'),
 				 sortActive: require('./assets/img/sort.png'),
 				 brandActive: require('./assets/img/brand.png'),
 				 cartActive: require('./assets/img/cart.png'),
@@ -35,7 +35,16 @@
    .van-tabbar-item--active{
 	   color:#333333;
    }
-
-
+  .van-tabbar{
+	  height: 0.99rem;
+	  .van-tabbar-item {
+		  font-size: .16rem;
+		  color: #333;
+		 
+		  
+	  }
+	 
+	
+  }
 
 </style>

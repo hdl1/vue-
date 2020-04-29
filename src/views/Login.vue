@@ -8,7 +8,7 @@
 			<div class="res">
 				<router-link to="/res" class="a" >注册</router-link>
 			</div>
-			<van-divider />
+			
 		</div>
 		
 		<div class="body">
@@ -81,6 +81,9 @@
 			justify-content:space-between;
 			align-items: center;
 			padding: 0 0.28rem;
+			.van-divider--hairline{
+				border-color:#e0e0e0 ;
+			}
 			
 			span{
 				font-size: .36rem;

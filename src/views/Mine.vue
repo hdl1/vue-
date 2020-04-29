@@ -2,7 +2,7 @@
 	<div class="mine">
 		<div class="top">
 			<img src="../assets/img/mine_bg.jpg" alt="">
-			<i></i>
+			<i @click="go"></i>
 			<div class="photo">
 				<i></i>
 			</div>
@@ -12,7 +12,7 @@
 		<div class="body">
 			<div class="con">
 				<span>我的订单</span>
-				<img src="../assets/img/back2.png" alt="">
+				<img src="../assets/img/back2.png" alt="" >
 			</div>
 			<div class="content">
 				<ul>
@@ -98,6 +98,11 @@
 		created(){
 			this.username=this.$cookie.get("username")
 			// console.log(this.username)
+		},
+		methods:{
+			go(){
+				this.$router.push("/setting")
+			}
 		}
 	}
 </script>

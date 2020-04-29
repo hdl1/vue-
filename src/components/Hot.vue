@@ -147,6 +147,7 @@ export default {
 					  
 				  }
 				}
+				
 				.list1{
 					margin-top:0.6rem;
 					display: flex;

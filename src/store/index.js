@@ -26,7 +26,7 @@ export default new Vuex.Store({
 	  addCar(state,good){
 	  		  let add=true
 	  		  state.goodslist.forEach((item,index)=>{
-	  			  if(item.goodid==good.goodid&&item.skuid==good.skuid){
+	  			  if(item.goodid==good.goodid){
 	  					  item.num+=good.num
 	  					    add=false; 
 	  			  }

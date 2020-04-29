@@ -6,9 +6,8 @@ import Brand from '../views/Brand.vue'
 import Cart from '../views/Cart.vue'
 import Mine from '../views/Mine.vue'
 import Product from '../views/Product.vue'
-import Category from '../views/Category.vue'
+import Setting from '../views/Setting.vue'
 import Login from '../views/Login.vue'
-import Forget from '../views/Forget.vue'
 import Res from '../views/Res.vue'
 
 
@@ -31,12 +30,7 @@ Vue.use(VueRouter)
 		tab:true
 	}
   },
-  {
-    path: '/forget',
-    name: 'Forget',
-    component: Forget,
   
-  },
   
   {
     path: '/brand',
@@ -51,7 +45,8 @@ Vue.use(VueRouter)
     name: 'Cart',
     component: Cart,
 	meta:{
-		tab:true
+		tab:true,
+		auth:true
 	}
   },
   
@@ -74,12 +69,10 @@ Vue.use(VueRouter)
   	
   },
   {
-    path: '/category',
-    name: 'Category',
-    component: Category,
-	meta:{
-		tab:true
-	}
+    path: '/setting',
+    name: 'Setting',
+    component: Setting,
+	
   },
   
   {

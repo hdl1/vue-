@@ -1,7 +1,6 @@
 <template>
 	<div class="sort">
 		<div class="top">
-			<img src="../assets/img/xy.png" alt="">
 			<span>商品分类</span>
 		</div>
 		<div class="body">
@@ -11,56 +10,64 @@
 				</van-sidebar>
 			</div>
 			<div class="right" v-for="(item,index) in datasInfo" v-if="index==activeKey" >
-				<div   v-if="item.name=='新品上线'">
+				<div   v-if="item.name=='新品上线'" class="content">
 					<div class="con" v-for="(it,inde) in item.results" :key="inde">
-						{{it.name}}
-						<img src="" alt="">
-						<p></p>
+						<router-link :to="'/product/'+it.product_id " class="a">
+							<img :src="it.image_url" alt="">
+							<p>{{it.name}}</p>
+						</router-link>
+						
 					</div>
 				</div>
 				
-				<div   v-if="item.name=='面部护肤'">
+				<div   v-if="item.name=='面部护肤'" class="content">
 					<div class="con" v-for="(it,inde) in item.results" :key="inde">
-						{{it.name}}
-						<img src="" alt="">
-						<p></p>
+						<router-link :to="'/product/'+it.product_id " class="a">
+							<img :src="it.image_url" alt="">
+							<p>{{it.name}}</p>
+						</router-link>
 					</div>
 				</div>
 				
-				<div v-if="item.name=='魅力彩妆'">
+				<div v-if="item.name=='魅力彩妆'" class="content">
 					<div class="con" v-for="(it,inde) in item.results" :key="inde">
-						{{it.name}}
-						<img src="" alt="">
-						<p></p>
+						<router-link :to="'/product/'+it.product_id " class="a">
+							<img :src="it.image_url" alt="">
+							<p>{{it.name}}</p>
+						</router-link>
 					</div>
 				</div>
 				
-				<div v-if="item.name=='美发造型'">
+				<div v-if="item.name=='美发造型'" class="content">
 					<div class="con" v-for="(it,inde) in item.results" :key="inde">
-						{{it.name}}
-						<img src="" alt="">
-						<p></p>
+						<router-link :to="'/product/'+it.product_id " class="a">
+							<img :src="it.image_url" alt="">
+							<p>{{it.name}}</p>
+						</router-link>
 					</div>
 				</div>
-				<div v-if="item.name=='沐浴美体'">
+				<div v-if="item.name=='沐浴美体'" class="content">
 					<div class="con" v-for="(it,inde) in item.results" :key="inde">
-						{{it.name}}
-						<img src="" alt="">
-						<p></p>
+						<router-link :to="'/product/'+it.product_id " class="a">
+							<img :src="it.image_url" alt="">
+							<p>{{it.name}}</p>
+						</router-link>
 					</div>
 				</div>
-				<div v-if="item.name=='男士护理'">
+				<div v-if="item.name=='男士护理'" class="content">
 					<div class="con" v-for="(it,inde) in item.results" :key="inde">
-						{{it.name}}
-						<img src="" alt="">
-						<p></p>
+						<router-link :to="'/product/'+it.product_id " class="a">
+							<img :src="it.image_url" alt="">
+							<p>{{it.name}}</p>
+						</router-link>
 					</div>
 				</div>
-				<div v-if="item.name=='配饰工具'">
+				<div v-if="item.name=='配饰工具'" class="content">
 					<div class="con" v-for="(it,inde) in item.results" :key="inde">
-						{{it.name}}
-						<img src="" alt="">
-						<p></p>
+						<router-link :to="'/product/'+it.product_id " class="a">
+							<img :src="it.image_url" alt="">
+							<p>{{it.name}}</p>
+						</router-link>
 					</div>
 				</div>
 				
@@ -80,25 +87,13 @@
 		    return {
 		      activeKey: 1,
 			  datasInfo:null,
-			  selected:null,
+			  
 			
 		    };
 		  },
 		  created(){
 				this.datasInfo=total
-				// total.forEach(item=>{
-				// 	this.datas=item.results
-				// 	console.log(item.results)
-				// 	if(item.name){
-				// 		this.selected=item.name
-				// 		// console.log(item.name)
-				// 	}
-					
-				// })
-				
-				
-				
-			
+				// console.log(total)
 		  }
 		
 	}
@@ -133,18 +128,64 @@
 				bottom:0;
 				width:30%;
 				overflow-y: scroll;
+				background-color: #FFFFFF;
 				.van-sidebar{
-					margin-top: 0.2rem;
+					width:100%;
+					
+					
 				}
+				.van-sidebar-item{
+					font-size: 0.28rem;
+					text-align: center;
+					color:#333333;
+				}
+				.van-sidebar-item--select{
+					border-color:#333333;
+					font-weight: 700;
+				}
+				
 			}
 			.right{
 				background-color: #FFFFFF;
 				position: absolute;
-				top:1.1rem;
+				top:1rem;
 				left:30%;
 				right:0;
 				bottom:0;
+				overflow: scroll;
+				.content{
+					display: flex;
+					justify-content:space-around;
+					align-items: center;
+					flex-wrap: wrap;
+					padding: 0.2rem;
+					
+					.con{
+						width:30%;
+						margin-top: 0.2rem;
+						margin-left: 0.01rem;
+						overflow : hidden;
+						text-overflow: ellipsis;
+						display: -webkit-box;
+						-webkit-line-clamp: 2;
+						-webkit-box-orient: vertical;
+						.a{
+							display: block;
+							img{
+								width: 100%;
+								padding: 0.2rem;
+							}
+							p{
+								font-size: 0.18rem;
+								color:#333333;
+								text-align: center;
+							}
+						}
+						
+					}
+				}
 			}
+			
 		}
 		
 	}
