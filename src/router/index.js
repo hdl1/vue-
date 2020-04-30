@@ -53,7 +53,10 @@ Vue.use(VueRouter)
   {
     path: '/product/:id',
     name: 'Product',
-    component: Product
+    component: Product,
+	meta:{
+		auth:true
+	}
 	
   },
   {

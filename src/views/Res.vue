@@ -14,10 +14,10 @@
 				<label>+86</label>
 				<input type="text" placeholder="请输入手机号" v-model.trim="tel">
 			</div>
-			<div class="pwd">
-				<i style="background-position:-1.26rem 0"></i>
+			<div class="yzm">
+				<img src="../assets/img/yzm.png" alt="">
 				<input type="text" placeholder="请输入验证码" v-model.trim="yzm">
-				<van-button color="#000000" :style="{borderRadius: .34+'rem',width:2.2+'rem',height: .68+'rem',fontSize:0.12+'rem',lineHeight:0.68+'rem'}" @click="getyzm">获取验证码</van-button>
+				<van-button color="#000000" :style="{borderRadius: .3+'rem',width:2+'rem',height: .68+'rem',fontSize:0.12+'rem',lineHeight:0.68+'rem'}" @click="getyzm">获取验证码</van-button>
 			</div>
 			<div class="pwd">
 				<i style="background-position:0 -1.26rem"></i>
@@ -142,6 +142,27 @@
 					padding-left: .12rem;
 					border: none;
 					background-color: #f0f0f0;
+				}
+			}
+			.yzm{
+				display: flex;
+				justify-content:space-between;
+				align-items: center;
+				padding-top: 0.34rem;
+				border-bottom:1px solid #e0e0e0;
+				
+				img{
+					width: 0.32rem;
+					height: 0.32rem;
+				}
+				input{
+					width: 2rem;
+					height: 1rem;
+					font-size: .3rem;
+					color:#000000;
+					line-height: 1rem;
+					background-color: #f0f0f0;
+					border: none;
 				}
 			}
 			.pwd{

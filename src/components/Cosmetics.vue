@@ -58,17 +58,25 @@ export default {
 	  // console.log(Cz.results);
   },
   methods:{
-  	  addcart(it){
-  	  		  this.$store.dispatch("addAsync",{
-  	  		      goodid:it.product_id,
-  	  		      name:it.name,
-  	  		      price:it.reference_price,
-  	  		      desc:it.short_description,
-  	  		      num:1,
-  	  		      image:it.image_url,
-  	  		  }).then(()=>{
-  	  		  	this.$toast("加入购物车成功")
-  	  		  })
+  	  addcart(it){
+  	  			  let is_login=this.$cookie.get("username");
+  	  			   if(is_login){
+  	  					this.$store.dispatch("addAsync",{
+  	  					    goodid:it.product_id,
+  	  					    name:it.name,
+  	  					    price:it.reference_price,
+  	  					    desc:it.short_description,
+  	  					    num:1,
+  	  					    image:it.image_url,
+  	  					}).then(()=>{
+  	  						this.$toast("加入购物车成功")
+  	  					})
+  	  				  
+  	  					}else{
+  	  						this.$toast("请先登录")
+  	  				}
+  	  			  
+  	  		  
   	  }
     },
 }
